@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 1034743,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -148,13 +148,19 @@ export async function POST(request: Request) {
             text: `portrait of ohwx ${type} with bob with bangs hairstyle`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
-            num_images: 3,
+            num_images: 2,
+          },
+          {
+            text: `portrait of ohwx ${type} with pixie haircut`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
+            callback: promptWebhookWithParams,
+            num_images: 2,
           },
           {
             text: `portrait of ohwx ${type} with blunt haircut`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
-            num_images: 3,
+            num_images: 2,
           },
         ],
       },
