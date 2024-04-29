@@ -140,16 +140,19 @@ export async function POST(request: Request) {
         prompts_attributes: [
           {
             text: `portrait of ohwx ${type} with pixie haircut`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
           {
             text: `portrait of ohwx ${type} with bob with bangs hairstyle`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
           {
             text: `portrait of ohwx ${type} with blunt haircut`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
             num_images: 3,
           },
