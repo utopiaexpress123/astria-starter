@@ -7,6 +7,7 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
+
 /** Add fonts into your Next.js project:
 
 import { Inter } from 'next/font/google'
@@ -38,6 +39,7 @@ export function UtopiaHero() {
             <Image
               className="rounded-xl object-cover"
               height="500"
+              alt="hello"
               src="/v1.jpg"
               style={{
                 aspectRatio: "400/500",
@@ -48,6 +50,7 @@ export function UtopiaHero() {
             <Image
               className="rounded-xl object-cover"
               height="512"
+              alt="hello"
               src="/v2.jpg"
               style={{
                 aspectRatio: "512/512",
@@ -58,6 +61,7 @@ export function UtopiaHero() {
             <Image
               className="rounded-xl object-cover"
               height="500"
+              alt="hello"
               src="/v4.jpg"
               style={{
                 aspectRatio: "400/500",
