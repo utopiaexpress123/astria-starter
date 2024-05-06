@@ -34,6 +34,8 @@ export function UtopiaHero() {
             <p className="max-w-[500px] text-pink-100 md:text-xl">
             Upload some photo of yourself and try lots of different hairstyles and hair colors.
             </p>
+
+            <h1 className="drop-shadow-lg drop-shadow-slate-800/60 text-slate-100 text-4xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-9xl">30</h1>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <Image
