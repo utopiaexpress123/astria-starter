@@ -58,9 +58,9 @@ export default function ClientSideModelsList({
   return (
     <div id="train-model-container" className="min-w-full">
       {models && models.length > 0 && (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 p-2 border border-stone-200 rounded-2xl">
           <div className="flex flex-row gap-4 w-full justify-between items-center text-center">
-            <p className="text-2xl font-extrabold opacity-10">Your models</p>
+            <p className="ml-2 text-xs font-normal text-stone-400">Your models</p>
             <Link href="/overview/models/train" className="w-fit">
               <Button variant="default" size={"sm"}>
                 Train model

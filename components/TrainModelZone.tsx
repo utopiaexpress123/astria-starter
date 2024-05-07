@@ -212,9 +212,8 @@ export default function TrainModelZone() {
             )}
           />
           <div className="flex flex-col gap-4">
-            <FormLabel>Hair length</FormLabel>
+            <FormLabel>Select your type</FormLabel>
             <FormDescription className="text-stone-400">
-            What hair length would you like to see in the pictures?
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
@@ -226,17 +225,17 @@ export default function TrainModelZone() {
             >
               <div>
                 <RadioGroupItem
-                  value="short"
-                  id="short"
+                  value="man"
+                  id="man"
                   className="peer sr-only"
-                  aria-label="short"
+                  aria-label="man"
                 />
                 <Label
-                  htmlFor="short"
+                  htmlFor="man"
                   className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <FaMale className="mb-3 h-6 w-6" />
-                  Short
+                  Man
                 </Label>
               </div>
 
