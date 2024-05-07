@@ -23,6 +23,7 @@ import { FaFemale, FaImages, FaMale, FaRainbow } from "react-icons/fa";
 import * as z from "zod";
 import { fileUploadFormSchema } from "@/types/zod";
 import { upload } from "@vercel/blob/client";
+import { CameraIcon } from "./ui/camera-icon";
 
 type FormInput = z.infer<typeof fileUploadFormSchema>;
 
@@ -195,14 +196,14 @@ export default function TrainModelZone() {
             render={({ field }) => (
               <FormItem className="w-full rounded-md">
                 <FormLabel>Name</FormLabel>
-                <FormDescription>
+                <FormDescription className="text-stone-400">
                   Give your model a name so you can easily identify it later.
                 </FormDescription>
                 <FormControl>
                   <Input
-                    placeholder="e.g. Natalie Headshots"
+                    placeholder="e.g. Natalie"
                     {...field}
-                    className="max-w-screen-sm"
+                    className="max-w-screen-lg"
                     autoComplete="off"
                   />
                 </FormControl>
@@ -211,9 +212,9 @@ export default function TrainModelZone() {
             )}
           />
           <div className="flex flex-col gap-4">
-            <FormLabel>Type</FormLabel>
-            <FormDescription>
-              Select the type of headshots you want to generate.
+            <FormLabel>Hair length</FormLabel>
+            <FormDescription className="text-stone-400">
+            What hair length would you like to see in the pictures?
             </FormDescription>
             <RadioGroup
               defaultValue={modelType}
@@ -225,17 +226,17 @@ export default function TrainModelZone() {
             >
               <div>
                 <RadioGroupItem
-                  value="man"
-                  id="man"
+                  value="short"
+                  id="short"
                   className="peer sr-only"
-                  aria-label="man"
+                  aria-label="short"
                 />
                 <Label
-                  htmlFor="man"
+                  htmlFor="short"
                   className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-transparent p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 >
                   <FaMale className="mb-3 h-6 w-6" />
-                  Man
+                  Short
                 </Label>
               </div>
 
@@ -275,10 +276,9 @@ export default function TrainModelZone() {
             {...getRootProps()}
             className=" rounded-md justify-center align-middle cursor-pointer flex flex-col gap-4"
           >
-            <FormLabel>Samples</FormLabel>
+            <FormLabel>Your photos</FormLabel>
             <FormDescription>
-              Upload 4-10 images of the person you want to generate headshots
-              for.
+              Upload 4-10 images of yourself. 
             </FormDescription>
             <div className="outline-dashed outline-2 outline-gray-100 hover:outline-blue-500 w-full h-full rounded-md p-4 flex justify-center align-middle">
               <input {...getInputProps()} />
@@ -286,8 +286,8 @@ export default function TrainModelZone() {
                 <p className="self-center">Drop the files here ...</p>
               ) : (
                 <div className="flex justify-center flex-col items-center gap-2">
-                  <FaImages size={32} className="text-gray-700" />
-                  <p className="self-center">
+                  <CameraIcon/>
+                  <p className="self-center text-xs">
                     Drag 'n' drop some files here, or click to select files.
                   </p>
                 </div>
@@ -300,12 +300,12 @@ export default function TrainModelZone() {
                 <div key={file.name} className="flex flex-col gap-1">
                   <img
                     src={URL.createObjectURL(file)}
-                    className="rounded-md w-24 h-24 object-cover"
+                    className="rounded-full w-24 h-24 object-cover"
                   />
                   <Button
-                    variant="outline"
+                    variant="secondary"
                     size={"sm"}
-                    className="w-full"
+                    className="w-94"
                     onClick={() => removeFile(file)}
                   >
                     Remove
@@ -315,8 +315,8 @@ export default function TrainModelZone() {
             </div>
           )}
 
-          <Button type="submit" className="w-full" isLoading={isLoading}>
-            Train Model{" "}
+          <Button type="submit" className="h-12 w-full mx-auto text-sm" isLoading={isLoading}>
+            Create Model{" "}
             {stripeIsConfigured && <span className="ml-1">(1 Credit)</span>}
           </Button>
         </form>

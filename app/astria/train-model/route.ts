@@ -139,19 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `portrait of ohwx ${type} with pixie haircut`,
-            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
-            callback: promptWebhookWithParams,
-            num_images: 2,
-          },
-          {
-            text: `portrait of ohwx ${type} with Messy Shaggy look hairstyle, crazy colours`,
-            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
-            callback: promptWebhookWithParams,
-            num_images: 2,
-          },
-          {
-            text: `portrait of ohwx ${type} with Messy Shaggy look hairstyle, crazy colours`,
+            text: `${name} portrait of ohwx ${type} with pixie haircut`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
             num_images: 2,
